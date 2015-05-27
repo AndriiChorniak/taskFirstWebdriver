@@ -11,7 +11,7 @@ public class ChromeDriverBuilder {
 
 	public WebDriver initializeWebDriver() {
 		ChromeDriverService service = new ChromeDriverService.Builder()
-				.usingDriverExecutable(new File("D:\Libraries\Webdriver/chromedriver.exe"))
+				.usingDriverExecutable(new File("D:\\Libraries\\Webdriver\\chromedriver.exe"))
 				.usingAnyFreePort().build();
 		try {
 			service.start();
