@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="testMail.TestYandex">
+        <methods>
+          <include name="createNewLetter"/>
+          <include name="login"/>
+          <include name="startBrowser"/>
+          <include name="afterClass"/>
+          <include name="verifyDraftIsDisappear"/>
+          <include name="verifyBodyOfLetter"/>
+          <include name="verifySendedLetters"/>
+          <include name="logout"/>
+        </methods>
+      </class> <!-- testMail.TestYandex -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
