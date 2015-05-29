@@ -85,9 +85,7 @@ public class TestI {
 	}
 
 	private By isLogined() {
-		//mypropilepage.titlename;
 		return By.className("sn_menu_title");
-		
 	}
 
 	@Test(description = "Cretae new letter", dependsOnMethods = { "login" })

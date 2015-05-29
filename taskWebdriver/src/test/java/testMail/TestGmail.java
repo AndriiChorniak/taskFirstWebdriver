@@ -82,20 +82,16 @@ public class TestGmail {
 	}
 
 	private By isLogined() {
-		//mypropilepage.titlename;
 		return By.xpath("//div[@class='gb_fa gb_s gb_0c gb_r']/a");
-		
 	}
 
 	@Test(description = "Cretae new letter", dependsOnMethods = { "login" })
 	public void createNewLetter() {
 		clickOnButtonCreateNewLetter();
-		//new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='oj']/div[@class='wO nr l1']/textarea")));
 		formFilling(ADDRESSEE, SUBJECT, BODY);
 		saveInDraft();
 		clickOnButtonDraft();
 		assertTrue(isElementPresent(isSubjectPresent()));
-		//assertEquals(driver.findElement(By.xpath("//div[@aria-label='Тело письма']")).getText(), SUBJECT);
 	}
 
 	private void clickOnButtonCreateNewLetter() {
@@ -115,41 +111,25 @@ public class TestGmail {
 		verifyBody();
 		new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(bodyWait()));
 		assertEquals(driver.findElement(By.xpath("//div[@class='Am Al editable LW-avf']")).getText(), BODY);
-		//assertTrue(isElementPresent(isBodyPresent()));
 		clickOnButtonSend();
 	}
 	
 	
 
 	private By bodyWait() {
-		
 		return By.xpath("//div[@class='Am Al editable LW-avf']");
-	}
-
-	private By isBodyPresent() {
-		return By.xpath("//div[text()='" + BODY+ "']");
 	}
 
 	@Test(description = "Verify draft is disappear", dependsOnMethods = { "verifyBodyOfLetter" })
 	public void verifyDraftIsDisappear() {
-		//new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(rowInDraft()));
-		//new WebDriverWait(driver, 5, 5000).until(ExpectedConditions.presenceOfAllElementsLocatedBy(rowInDraft()));
-		//assertFalse(isElementPresent(isSubjectPresent()));
-		
 		clickOnButtonDraft();
 		assertTrue(isElementPresent(isSubjectPresent()));
-		
 	}
 
-	private By rowInSended() {
-		
-		return By.xpath("//tr[@class='TD']/td[@class='TC']");
-	}
 
 	@Test(description = "Verify sended letters", dependsOnMethods = { "verifyDraftIsDisappear" })
 	public void verifySendedLetters() {
 		goToSendedLetters();
-		//new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(rowInSended()));
 		new WebDriverWait(driver, 5, 5000).until(ExpectedConditions.titleContains("Отправленные"));
 		assertTrue(isElementPresent(isSubjectPresent()));
 	}

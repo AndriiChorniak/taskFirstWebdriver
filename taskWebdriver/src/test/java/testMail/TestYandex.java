@@ -91,9 +91,7 @@ public class TestYandex {
 	}
 
 	private By isLogined() {
-		//mypropilepage.titlename;
 		return By.xpath("//span[@class='js-messages-title-dropdown-name']");
-		
 	}
 
 	@Test(description = "Cretae new letter", dependsOnMethods = { "login" })
@@ -127,7 +125,6 @@ public class TestYandex {
 	@Test(description = "Verify body of letter", dependsOnMethods = { "createNewLetter" })
 	public void verifyBodyOfLetter() {
 		verifyBody();
-		//new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(draftedletterrow.textInBody));
 		assertEquals(returnBody(), BODY);
 		clickOnButtonSend();
 	}
@@ -142,7 +139,6 @@ public class TestYandex {
 	@Test(description = "Verify draft is disappear", dependsOnMethods = { "verifyBodyOfLetter" })
 	public void verifyDraftIsDisappear() {
 		clickOnButtonDraft();
-		//new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(mypropilepage.verifyRow));
 		new WebDriverWait(driver, 5, 5000).until(ExpectedConditions.titleContains("Черновики"));
 		assertTrue(isElementPresent(isSubjectPresent()));
 	}
