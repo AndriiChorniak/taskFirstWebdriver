@@ -56,6 +56,7 @@ public class TestGmail {
 			
 			e.printStackTrace();
 		}
+		driver.manage().window().maximize();
 		driver.get(START_URL);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		goToMainPage();

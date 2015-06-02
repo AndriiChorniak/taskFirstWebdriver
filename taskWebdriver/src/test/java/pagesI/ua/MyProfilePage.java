@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 public class MyProfilePage extends Anypage{
 	private static final String SUBJECT = "it is test";
 	
-	@FindBy(xpath = "//div[@class='b-toolbar__block b-toolbar__block_chevron']/a[2]")
+	@FindBy(xpath = "//p[@class='make_message']/a")
 	public WebElement createNewLetterButton;
 	
 	@FindBy(xpath = "//ul[@class='list_underlined']/li[3]/a")

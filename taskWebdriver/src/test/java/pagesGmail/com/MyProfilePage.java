@@ -19,7 +19,7 @@ public class MyProfilePage extends Anypage{
 	@FindBy(xpath = "//span[text()='" + SUBJECT + "']")
 	WebElement subject;
 	
-	@FindBy(xpath = "//a[@href='https://profiles.google.com/?hl=ru&tab=mX']")
+	@FindBy(xpath = "//div[@style='min-width: 120px;']/div[4]/div[1]/a")
 	public WebElement settingsButton;
 	
 	@FindBy(xpath = "//a[@href='https://mail.google.com/mail/logout?hl=ru']")
